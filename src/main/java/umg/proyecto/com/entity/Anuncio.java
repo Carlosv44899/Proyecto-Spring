@@ -1,0 +1,98 @@
+package umg.proyecto.com.entity;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import jakarta.persistence.Basic;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "anuncio")
+public class Anuncio implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 718865540732148690L;
+	
+	
+	@Id
+	@Column(name="id_anuncio")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Basic(optional=false)
+	private int id_anuncio;
+	
+	
+	@Column(name="titulo")
+	private String titulo;
+
+	@Column(name="descripcion")
+	private String descripcion;
+	
+	@Column(name="fecha_publicacion")
+	private Date fechaPublicacion;
+	
+	@Column(name="imagen", columnDefinition="LONGTEXT")
+	private String imagen;
+	
+	@Column(name="hashtag")
+	private String hashtag;
+
+	public int getId_anuncio() {
+		return id_anuncio;
+	}
+
+	public void setId_anuncio(int id_anuncio) {
+		this.id_anuncio = id_anuncio;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public Date getFechaPublicacion() {
+		return fechaPublicacion;
+	}
+
+	public void setFechaPublicacion(Date fechaPublicacion) {
+		this.fechaPublicacion = fechaPublicacion;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+	public String getHashtag() {
+		return hashtag;
+	}
+
+	public void setHashtag(String hashtag) {
+		this.hashtag = hashtag;
+	}
+
+	
+	
+	
+
+}
